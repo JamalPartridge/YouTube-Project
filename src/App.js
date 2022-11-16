@@ -11,7 +11,7 @@ function App() {
   function handleSearchResult() {
     setSearchResults(/*api result [] */);
   }
-
+  // thank you JD :)
   return (
     <div className="App">
       <header className="App-header">
