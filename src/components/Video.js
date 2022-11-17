@@ -1,3 +1,3 @@
 export default function Video({}) {
-  return null;
+  return <div>Single video card</div>;
 }
