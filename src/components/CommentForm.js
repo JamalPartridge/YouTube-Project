@@ -1,3 +1,3 @@
 export default function CommentForm({}) {
-  return null;
+  return <div>Test</div>;
 }

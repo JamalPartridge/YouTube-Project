@@ -14,20 +14,49 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: red;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+.App-Links {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .App-link {
   color: #61dafb;
 }
-
+#search {
+  min-width: 80vh;
+}
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+  height: 180px;
+}
+.list-video {
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 250px;
+}
+.video-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
