@@ -46,8 +46,10 @@ export default function Home() {
           snowboard.map(
             (e) =>
               e.id.kind == "youtube#video" &&
-              (e.snippet.title.includes(search) ||
-                e.snippet.description.includes(search)) && (
+              (e.snippet.title.toUpperCase().includes(search.toUpperCase()) ||
+                e.snippet.description
+                  .toUpperCase()
+                  .includes(search.toUpperCase())) && (
                 <li className="list-video">
                   <img
                     className="img"
