@@ -1,40 +1,48 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Home from "./components/Home";
+import About from "./components/About";
 import Video from "./components/Video";
+import ErrorMessage from "./components/ErrorMessage";
 import CommentForm from "./components/CommentForm";
-import { snowboard } from "./mockdata";
 
+import { snowboard } from "./mockdata";
 import "./App.css";
 
 function App() {
-  const [searchResults, setSearchResults] = useState([]);
+  // const [searchResults, setSearchResults] = useState([]);
+  // function handleSearchResult() {
+  //   setSearchResults(/*api result [] */);
+  // }
 
+  // const navigate = useNavigate();
   // thank you JD :)
-  console.log(snowboard.map((e) => e.snippet.title));
-
-  function handleSearchResult() {
-    setSearchResults(/*api result [] */);
-  }
+  // console.log(snowboard.map((e) => e.snippet.title));
 
   return (
     <div className="App">
       <header className="App-header">
-        <h2 className="App-Links">Home</h2>
-        <h1 className="App-Links">Youtube Project</h1>
-        <h2 className="App-Links">About</h2>
+        <h2 className="App-Links">
+          <Link to="/"> Home</Link>
+        </h2>
+        <h1 classId="Youtube_Project">Youtube Project</h1>
+        <h2 className="App-Links">
+          <Link to="/about"> About</Link>
+        </h2>
       </header>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/videos" element={<></>} />
-          <Route path="/videos/:id" element={<Video />} />
-          <Route path="/" element={<CommentForm />} />
-          {"  "}
-          {/* why comment form on landing page? Should be apart of the /videos/:id path no? */}
-        </Routes>
-      </Router>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<ErrorMessage />} />
+        <Route path="/videos/:id" element={<Video />} />
+        <Route path="/" element={<CommentForm />} />
+        <Route path="/about" element={<About />} />
+
+        {/* why comment form on landing page? Should be apart of the /videos/:id path no? */}
+      </Routes>
     </div>
   );
 }
