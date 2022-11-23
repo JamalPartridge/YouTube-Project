@@ -76,13 +76,9 @@ export default function Home() {
         {search &&
           data.map(
             (e) =>
-              e.id.kind == "youtube#video" &&
-              (e.snippet.title.toUpperCase().includes(search.toUpperCase()) ||
-                e.snippet.description
-                  .toUpperCase()
-                  .includes(search.toUpperCase())) && (
+              e.id.kind == "youtube#video" && (
                 <li className="list-video">
-                  <Link to={`/videos/:${e.id.videoId}`}>
+                  <Link to={`/videos/${e.id.videoId}`}>
                     <img
                       className="img"
                       alt="Search Term"
@@ -99,3 +95,8 @@ export default function Home() {
     </div>
   );
 }
+// dont do this ...Bad ( you was trying to be over analytical )
+// (e.snippet.title.toUpperCase().includes(search.toUpperCase()) ||
+// e.snippet.description
+//   .toUpperCase()
+//   .includes(search.toUpperCase())) &&
