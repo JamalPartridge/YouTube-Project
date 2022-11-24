@@ -1,7 +1,22 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
-
+.About {
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 75vh;
+}
+.About_Devs {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.About_pfp {
+  height: 200px;
+  width: 200px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,6 +26,11 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.tinted_Video {
+  background-color: rgba(10, 4, 4, 0.906);
+  background-blend-mode: multiply;
+  height: 100vh;
 }
 
 .App-header {

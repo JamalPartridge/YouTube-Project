@@ -1,3 +1,3 @@
 export default function CommentForm({}) {
-  return <div>Test</div>;
+  return <div>CommentForm sectional optional</div>;
 }

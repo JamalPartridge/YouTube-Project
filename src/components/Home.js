@@ -95,7 +95,8 @@ export default function Home() {
     </div>
   );
 }
-// dont do this ...Bad ( you was trying to be over analytical )
+
+// dont do this ...Bad ( was trying to be over analytical )
 // (e.snippet.title.toUpperCase().includes(search.toUpperCase()) ||
 // e.snippet.description
 //   .toUpperCase()

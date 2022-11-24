@@ -38,7 +38,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<ErrorMessage />} />
         <Route path="/videos/:id" element={<Video />} />
-        <Route path="/" element={<CommentForm />} />
         <Route path="/about" element={<About />} />
 
         {/* why comment form on landing page? Should be apart of the /videos/:id path no? */}
