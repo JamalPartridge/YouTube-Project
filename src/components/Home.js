@@ -1,9 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { json } from "react-router-dom";
 import { snowboard } from "../mockdata";
 import { Link } from "react-router-dom";
-
-// snowboard.map((e) => e.snippet.title)
 
 console.log(snowboard[1].id.videoId);
 
@@ -15,7 +12,7 @@ export default function Home() {
     let bro;
 
     fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${search}&key=${process.env.REACT_APP_API_KEY}`
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${search}&key=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
@@ -30,30 +27,11 @@ export default function Home() {
 
   console.log(data);
   console.log(search);
-  //   useEffect(() => {
-  //     setNodeList(document.querySelectorAll("li").length);
-  //   }, []);
-
   const searchVal = useRef(null);
 
   function handleSearch() {
     setSearch(searchVal.current.value);
   }
-  // testing more Dynamic 👇🏿 queries
-  //   function multipleExist(arr, values) {
-  //     return values.every(value => {
-  //       return arr.includes(value);
-  //     });
-  //     (multipleExist(
-  //         e.snippet.title.toUpperCase().split(" "),
-  //         search.toUpperCase().split(" ")
-  //       ) ||
-  //         multipleExist(
-  //           e.snippet.title.toUpperCase().split(" "),
-  //           search.toUpperCase().split(" ")
-  //         ))
-  //   }
-
   return (
     <div>
       <h3>
@@ -96,8 +74,30 @@ export default function Home() {
   );
 }
 
+//no longer needed
 // dont do this ...Bad ( was trying to be over analytical )
 // (e.snippet.title.toUpperCase().includes(search.toUpperCase()) ||
 // e.snippet.description
 //   .toUpperCase()
 //   .includes(search.toUpperCase())) &&
+
+// snowboard.map((e) => e.snippet.title)
+// import { json } from "react-router-dom";
+//   useEffect(() => {
+//     setNodeList(document.querySelectorAll("li").length);
+//   }, []);
+
+// testing more Dynamic 👇🏿 queries
+//   function multipleExist(arr, values) {
+//     return values.every(value => {
+//       return arr.includes(value);
+//     });
+//     (multipleExist(
+//         e.snippet.title.toUpperCase().split(" "),
+//         search.toUpperCase().split(" ")
+//       ) ||
+//         multipleExist(
+//           e.snippet.title.toUpperCase().split(" "),
+//           search.toUpperCase().split(" ")
+//         ))
+//   }

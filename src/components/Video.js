@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 import React from "react";
 import YouTube from "react-youtube";
 import CommentForm from "./CommentForm";
@@ -24,14 +24,32 @@ export default function Video({}) {
 
   return (
     <div className={tint ? "tinted_Video" : null}>
-      <YouTube
-        videoId={id}
-        opts={opts}
-        onPlay={handleTint} // defaults -> noop
-        onPause={handleTint}
-        onEnd={handleTint}
-      />
-      <CommentForm />
+      {id === "EwTZ2xpQwpA" && (
+        <div>
+          {" "}
+          <YouTube
+            videoId={id}
+            opts={opts}
+            onPlay={handleTint} // defaults -> noop
+            onPause={handleTint}
+            onEnd={handleTint}
+          />
+          <p>choclate rain </p>
+        </div>
+      )}
+      {id !== "EwTZ2xpQwpA" && (
+        <div>
+          {" "}
+          <YouTube
+            videoId={id}
+            opts={opts}
+            onPlay={handleTint} // defaults -> noop
+            onPause={handleTint}
+            onEnd={handleTint}
+          />
+          <CommentForm />
+        </div>
+      )}
     </div>
   );
 }

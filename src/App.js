@@ -1,27 +1,14 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import Home from "./components/Home";
 import About from "./components/About";
 import Video from "./components/Video";
 import ErrorMessage from "./components/ErrorMessage";
-import CommentForm from "./components/CommentForm";
 
-import { snowboard } from "./mockdata";
 import "./App.css";
 
 function App() {
-  // const [searchResults, setSearchResults] = useState([]);
-  // function handleSearchResult() {
-  //   setSearchResults(/*api result [] */);
-  // }
-
-  // const navigate = useNavigate();
-  // thank you JD :)
-  // console.log(snowboard.map((e) => e.snippet.title));
-
   return (
     <div className="App">
       <header className="App-header">
@@ -47,3 +34,16 @@ function App() {
 }
 
 export default App;
+
+//no longer needed
+// const [searchResults, setSearchResults] = useState([]);
+// function handleSearchResult() {
+//   setSearchResults(/*api result [] */);
+// }
+
+// const navigate = useNavigate();
+// thank you JD :)
+// console.log(snowboard.map((e) => e.snippet.title));
+// import { useState } from "react";
+// import { snowboard } from "./mockdata";
+// import { useNavigate } from "react-router-dom";
