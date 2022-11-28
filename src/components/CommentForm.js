@@ -1,46 +1,73 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function CommentForm({}) {
-  const [comment, setComment] = useState([]);
-  const [name, setName] = useState([]);
+  const [comment, setComment] = useState("comment");
+  const [name, setName] = useState("name");
+  const [commentPost, setCommentPost] = useState([]);
   const commentVal = useRef(null);
   const nameVal = useRef(null);
 
+  useEffect(() => {
+    setName(nameVal.current.value);
+    setComment(commentVal.current.value);
+  }, [name, comment]);
+
   function handleComment() {
-    setComment(...comment, `${commentVal.current.value}`);
-    setName(...name, `${nameVal.current.value}`);
-    // comsec = document.getElementById("comm");
-    // comsecnew = document.createElement("p");
-    // comsecnew.innertext("test");
-    // comsec.append(comsecnew);
-    console.log("test", name, comment);
-    console.log(name.length, comment.length);
+    {
+      setCommentPost([`${name} says: ${comment}`, ...commentPost]);
+      console.log("test", name, comment, commentPost);
+      console.log(commentPost);
+      console.log(commentPost.length);
+    }
   }
-  // let comsec;
-  // let comsecnew;
+
+  const date = new Date().toJSON().slice(0, 10);
+  const today = new Date();
+  const time =
+    (today.getHours() > 12 ? today.getHours() - 12 : today.getHours()) +
+    ":" +
+    today.getMinutes() +
+    ":" +
+    today.getSeconds();
+
   return (
     <div>
-      <label htmlFor="amount">
-        <input
-          ref={nameVal}
-          id="name"
-          name="name"
-          type="text"
-          placeholder="name"
-        />
-        <input
-          ref={commentVal}
-          id="Comment"
-          name="Comment"
-          type="text"
-          placeholder="Comment"
-        />
-        {<div id="comm"></div>}
-      </label>{" "}
-      <button onClick={handleComment}>Comment</button>
-      {/* {comment.map((e) => (
-        <h4>{`${e}`}</h4>
-      ))} */}
+      {
+        <div id="comm">
+          <label id="label" htmlFor="amount">
+            Peanut Gallery:{"   "}
+          </label>{" "}
+          <input
+            ref={nameVal}
+            id="name"
+            name="name"
+            type="text"
+            placeholder="name"
+            onChange={() => setName(nameVal.current.value)}
+          />
+          <input
+            ref={commentVal}
+            id="Comment"
+            name="Comment"
+            type="text"
+            placeholder="Comment"
+            onChange={() => setComment(commentVal.current.value)}
+          />
+          <button onClick={handleComment}>Submit Comment</button>
+        </div>
+      }
+      <section>
+        {" "}
+        {commentPost.map((e) => (
+          <p className="CommSection">
+            {" "}
+            <h3>{`${e}`}</h3>
+            <h5>
+              {`  ${date}  ${time} ${today.getHours() > 12 ? "PM" : "AM"}`}
+            </h5>
+          </p>
+        ))}
+      </section>
     </div>
   );
 }

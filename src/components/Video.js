@@ -21,7 +21,14 @@ export default function Video({}) {
     },
   };
   console.log(tint);
-
+  const date = new Date().toJSON().slice(0, 10);
+  const today = new Date();
+  const time =
+    (today.getHours() > 12 ? today.getHours() - 12 : today.getHours()) +
+    ":" +
+    today.getMinutes() +
+    ":" +
+    today.getSeconds();
   return (
     <div className={tint ? "tinted_Video" : null}>
       {id === "EwTZ2xpQwpA" && (
@@ -34,7 +41,13 @@ export default function Video({}) {
             onPause={handleTint}
             onEnd={handleTint}
           />
-          <p>choclate rain </p>
+          <CommentForm />
+          <p className="CommSection">
+            {/* <h3>C.King says: is that tha young Goat JD? 🤣</h3> */}
+            <h5>{` ${date}  ${time} ${
+              today.getHours() > 12 ? "PM" : "AM"
+            } `}</h5>
+          </p>
         </div>
       )}
       {id !== "EwTZ2xpQwpA" && (
