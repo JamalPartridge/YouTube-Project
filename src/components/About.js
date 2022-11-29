@@ -7,10 +7,10 @@ function About(props) {
         <h1>About the Project</h1>
         <br />
         <h4>
-          This is my project for creating a 'Youtube clone' Application. I
+          This is our project for creating a 'Youtube clone' Application. We
           wanted to have something to work on as a passion project dedicated to
-          one of my favorite websites, Youtube. We've spent much time learning
-          how to incorperate what we learned from the 'React library'. I also
+          one of our favorite websites, Youtube. We've spent much time learning
+          how to incorperate what we learned from the React library. I also
           implemented some features that I would like to see youtube have.
         </h4>
       </div>
@@ -24,14 +24,14 @@ function About(props) {
             ></img>
             <br />
             Ron John <br />
-            <h6>
+            <h6 className="about-me-bio">
               I am a full stack web developer from Brooklyn, New York, proficent
               in front end and back end Javascript. I've spent the last few
-              months learning the fundementals of Javascript, the basics of
-              front end tools like HTML and CSS and getting familar with
-              different parts of the React Library. I've been working with
-              functional components and its been very helpful in helping me make
-              websites like these ... <br /> Link to my{" "}
+              months learning the fundementals of Javascript; the basics of
+              front end tools like HTML and CSS and enjoying getting familar
+              with different parts of the React Library. I've been working with
+              functional components and hooks and its been very helpful in
+              creating websites like these ... <br /> Link to my{" "}
               <a href={"https://github.com/ronJohnPursuit"} target="_blank">
                 GitHub
               </a>{" "}
@@ -45,8 +45,8 @@ function About(props) {
             ></img>
             <br />
             Jamal Partridge <br />
-            <h6>
-              Something about Me ... link to my{" "}
+            <h6 className="about-me-bio">
+              Something about Me; I Like to Code ... link to my{" "}
               <a href={"https://github.com/JamalPartridge"} target="_blank">
                 GitHub
               </a>{" "}
