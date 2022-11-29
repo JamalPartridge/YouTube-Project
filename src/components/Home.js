@@ -74,7 +74,7 @@ export default function Home() {
   );
 }
 
-//no longer needed
+// no longer needed
 // dont do this ...Bad ( was trying to be over analytical )
 // (e.snippet.title.toUpperCase().includes(search.toUpperCase()) ||
 // e.snippet.description

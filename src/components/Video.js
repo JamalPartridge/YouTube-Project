@@ -43,7 +43,22 @@ export default function Video({}) {
           />
           <CommentForm />
           <p className="CommSection">
-            {/* <h3>C.King says: is that tha young Goat JD? 🤣</h3> */}
+            <h3>
+              JSB says: Can we stop comparing this man to Prince, Prince could
+              never!! 😤{" "}
+            </h3>
+            <h5>{` ${date}  ${time} ${
+              today.getHours() > 12 ? "PM" : "AM"
+            } `}</h5>
+          </p>
+          <p className="CommSection">
+            <h3>C.King says: is that tha young Goat JD? 🤣</h3>
+            <h5>{` ${date}  ${time} ${
+              today.getHours() > 12 ? "PM" : "AM"
+            } `}</h5>
+          </p>
+          <p className="CommSection">
+            <h3>Mr.Richards says: Can y'all stop thats not me 🧐</h3>
             <h5>{` ${date}  ${time} ${
               today.getHours() > 12 ? "PM" : "AM"
             } `}</h5>
@@ -61,6 +76,27 @@ export default function Video({}) {
             onEnd={handleTint}
           />
           <CommentForm />
+          <p className="CommSection">
+            <h3>
+              BarzDroppa_diane says: I wish someone in my class could rap like
+              this ... wanna battle rap so bad 😈 😤!!{" "}
+            </h3>
+            <h5>{` ${date}  ${time} ${
+              today.getHours() > 12 ? "PM" : "AM"
+            } `}</h5>
+          </p>
+          <p className="CommSection">
+            <h3>Mina says: this sone would be great on an AMV 👾 </h3>
+            <h5>{` ${date}  ${time} ${
+              today.getHours() > 12 ? "PM" : "AM"
+            } `}</h5>
+          </p>
+          <p className="CommSection">
+            <h3>Destiny says: Not better than HOV tho 😎</h3>
+            <h5>{` ${date}  ${time} ${
+              today.getHours() > 12 ? "PM" : "AM"
+            } `}</h5>
+          </p>
         </div>
       )}
     </div>

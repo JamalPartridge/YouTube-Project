@@ -34,7 +34,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   position: sticky;
-  top: 0;
+  top: 6rem;
+  width: 100%;
+  border: 2px solid blue;
 }
 #label {
   color: white;
@@ -43,7 +45,7 @@
 .tinted_Video {
   background-color: rgba(10, 4, 4, 0.906);
   background-blend-mode: multiply;
-  height: 100vh;
+  height: 100%;
 }
 
 .App-header {
@@ -108,9 +110,11 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 320px) {
   .App-header {
-    width: 100%;
-    border: 2px solid blue;
+    /* overflow: hidden; */
+    display: flex;
+    /* width: 100%; */
+    /* border: 2px solid red; */
   }
 }
