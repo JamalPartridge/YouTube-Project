@@ -5,15 +5,13 @@ function About(props) {
     <div className="About">
       <div>
         <h1>About the Project</h1>
-        <br />{" "}
+        <br />
         <h4>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          This is our project for creating a 'Youtube clone' Application. We
+          wanted to have something to work on as a passion project dedicated to
+          one of our favorite websites, Youtube. We've spent much time learning
+          how to incorperate what we learned from the React library. I also
+          implemented some features that I would like to see youtube have.
         </h4>
       </div>
       <div>
@@ -26,8 +24,14 @@ function About(props) {
             ></img>
             <br />
             Ron John <br />
-            <h6>
-              Something about Me ... Link to my{" "}
+            <h6 className="about-me-bio">
+              I am a full stack web developer from Brooklyn, New York, proficent
+              in front end and back end Javascript. I've spent the last few
+              months learning the fundementals of Javascript; the basics of
+              front end tools like HTML and CSS and enjoying getting familar
+              with different parts of the React Library. I've been working with
+              functional components and hooks and its been very helpful in
+              creating websites like these ... <br /> Link to my{" "}
               <a href={"https://github.com/ronJohnPursuit"} target="_blank">
                 GitHub
               </a>{" "}
@@ -41,8 +45,8 @@ function About(props) {
             ></img>
             <br />
             Jamal Partridge <br />
-            <h6>
-              Something about Me ... link to my{" "}
+            <h6 className="about-me-bio">
+              Something about Me; I Like to Code ... link to my{" "}
               <a href={"https://github.com/JamalPartridge"} target="_blank">
                 GitHub
               </a>{" "}
