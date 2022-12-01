@@ -56,8 +56,8 @@ export default function CommentForm() {
       }
       <section>
         {" "}
-        {commentPost.map((e) => (
-          <p className="CommSection">
+        {commentPost.map((e, id) => (
+          <p key={id} className="CommSection">
             {" "}
             <h3>{`${e}`}</h3>
             <h5>
