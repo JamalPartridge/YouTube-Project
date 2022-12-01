@@ -50,9 +50,10 @@ export default function Home() {
         <h2>Please search for a video 🎥</h2>
       )}
       <div className="video-cards">
+        {console.log("data ", data)}
         {/* BIGGEST ISSUE HERE: LIMITED API CALLS AND SEARCH TERMS ARENT fixing */}
         {search &&
-          data.map(
+          data?.map(
             (e) =>
               e.id.kind == "youtube#video" && (
                 <li className="list-video">
