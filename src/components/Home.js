@@ -6,7 +6,7 @@ console.log(snowboard[1].id.videoId);
 
 export default function Home() {
   const [search, setSearch] = useState("");
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     let bro;
@@ -53,7 +53,8 @@ export default function Home() {
         {console.log("data ", data)}
         {/* BIGGEST ISSUE HERE: LIMITED API CALLS AND SEARCH TERMS ARENT fixing */}
         {search &&
-          data?.map(
+          data.length > 0 &&
+          data.map(
             (e) =>
               e.id.kind == "youtube#video" && (
                 <li className="list-video">
