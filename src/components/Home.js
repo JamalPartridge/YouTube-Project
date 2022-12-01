@@ -10,23 +10,14 @@ export default function Home() {
   const [result, setResult] = useState("");
 
   useEffect(() => {
-    let bro;
-
     fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${search}&key=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
-      .then((json) => {
-        bro = json.items;
-      })
-      .then(() => {
-        setData(bro);
+      .then((bro) => {
+        setData(bro.items);
       });
   }, [search]);
-
-  //   console.log(data);
-  //   console.log(search);
-  //   const searchVal = useRef(null);
 
   function handleSearch(e) {
     e.preventDefault();
