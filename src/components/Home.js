@@ -50,7 +50,7 @@ export default function Home() {
         <h2>Please search for a video 🎥</h2>
       )}
       <div className="video-cards">
-        {/* BIGGEST ISSUE HERE: LIMITED API CALLS AND SEARCH TERMS ARENT  */}
+        {/* BIGGEST ISSUE HERE: LIMITED API CALLS AND SEARCH TERMS ARENT fixing */}
         {search &&
           data.map(
             (e) =>
