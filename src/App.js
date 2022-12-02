@@ -15,7 +15,7 @@ function App() {
         <h2 className="App-Links">
           <Link to="/"> Home</Link>
         </h2>
-        <h1 classId="Youtube_Project">Youtube Project</h1>
+        <h1 className="Youtube_Project">Youtube Project</h1>
         <h2 className="App-Links">
           <Link to="/about"> About</Link>
         </h2>

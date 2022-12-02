@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { snowboard } from "../mockdata";
 import { Link } from "react-router-dom";
 
@@ -6,56 +6,50 @@ console.log(snowboard[1].id.videoId);
 
 export default function Home() {
   const [search, setSearch] = useState("");
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
+  const [result, setResult] = useState("");
 
   useEffect(() => {
-    let bro;
-
     fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${search}&key=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
-      .then((json) => {
-        {
-          bro = json.items;
-        }
-      })
-      .then(() => {
-        setData(bro);
+      .then((bro) => {
+        setData(bro.items);
       });
   }, [search]);
 
-  console.log(data);
-  console.log(search);
-  const searchVal = useRef(null);
-
-  function handleSearch() {
-    setSearch(searchVal.current.value);
+  function handleSearch(e) {
+    e.preventDefault();
+    setSearch(result);
   }
   return (
     <div>
-      <h3>
+      <form onSubmit={handleSearch}>
         <label htmlFor="amount">
           <input
-            ref={searchVal}
+            onChange={(e) => setResult(e.target.value)}
+            value={result}
             id="search"
             name="search"
             type="text"
             placeholder="Search"
           />
         </label>{" "}
-        <button onClick={handleSearch}>Search</button>
-      </h3>
+        <button>Search</button>
+      </form>
       {(search && <h2> Search results for: {search} </h2>) || (
         <h2>Please search for a video 🎥</h2>
       )}
       <div className="video-cards">
-        {/* BIGGEST ISSUE HERE: LIMITED API CALLS AND SEARCH TERMS ARENT  */}
+        {console.log("data ", data)}
+        {/* BIGGEST ISSUE HERE: LIMITED API CALLS AND SEARCH TERMS ARENT fixing */}
         {search &&
+          data.length > 0 &&
           data.map(
             (e) =>
-              e.id.kind == "youtube#video" && (
-                <li className="list-video">
+              e.id.kind === "youtube#video" && (
+                <li key={e.id} className="list-video">
                   <Link to={`/videos/${e.id.videoId}`}>
                     <img
                       className="img"

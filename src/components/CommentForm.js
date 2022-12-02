@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function CommentForm({}) {
+export default function CommentForm() {
   const [comment, setComment] = useState("comment");
   const [name, setName] = useState("name");
   const [commentPost, setCommentPost] = useState([]);
@@ -13,12 +13,10 @@ export default function CommentForm({}) {
   }, [name, comment]);
 
   function handleComment() {
-    {
-      setCommentPost([`${name} says: ${comment}`, ...commentPost]);
-      console.log("test", name, comment, commentPost);
-      console.log(commentPost);
-      console.log(commentPost.length);
-    }
+    setCommentPost([`${name} says: ${comment}`, ...commentPost]);
+    // console.log("test", name, comment, commentPost);
+    // console.log(commentPost);
+    // console.log(commentPost.length);
   }
 
   const date = new Date().toJSON().slice(0, 10);
@@ -58,8 +56,8 @@ export default function CommentForm({}) {
       }
       <section>
         {" "}
-        {commentPost.map((e) => (
-          <p className="CommSection">
+        {commentPost.map((e, id) => (
+          <p key={id} className="CommSection">
             {" "}
             <h3>{`${e}`}</h3>
             <h5>

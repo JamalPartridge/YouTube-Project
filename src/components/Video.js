@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import React from "react";
 import YouTube from "react-youtube";
 import CommentForm from "./CommentForm";
 
-export default function Video({}) {
+export default function Video() {
   const [tint, setTint] = useState(false);
   const { id } = useParams();
 
