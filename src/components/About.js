@@ -46,7 +46,7 @@ function About(props) {
             <br />
             Jamal Partridge <br />
             <h6 className="about-me-bio">
-              Something about Me; I Like to Code ... link to my{" "}
+              Hey eveyone, Jamal here. I am on a journey to become a full stack web developer. I have currently tackled the basics of Javascript, HTML, CSS, and now React. Using these languages, I was able to create websites just like this YouTube project ... <br /> link to my{" "}
               <a href={"https://github.com/JamalPartridge"} target="_blank">
                 GitHub
               </a>{" "}
